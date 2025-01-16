@@ -1,163 +1,101 @@
-/* Base styles */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  color: #fff;
-  text-align: center;
+html {height: 100%;}
+body { 
+  margin: 0; 
+  height: 100%; 
   overflow: hidden;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  background: #ccf;
+  background-image: linear-gradient(to bottom, rgb(4, 33, 121) 0%, rgb(255, 169, 57) 100%);
 }
-
-.scene {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.sky {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 70%;
-  background: linear-gradient(to bottom,#ee7c78, #FF7E5F );
-  z-index: 1;
-}
-
-.sun {
-  position: absolute;
-  bottom: 35%;
-  left: 60%;
-  width: 100px;
-  height: 100px;
-  background: radial-gradient(circle, #FFD700, #FF8C00);
+#sun {
+  width: 100px; height: 100px;
   border-radius: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
-}
-
-.sea {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 30%;
-  background: #4FC3F7;
-  overflow: hidden;
-  z-index: 2;
+  left: 300px; bottom: 200px;
+  background: #ccf;
+  background-image: linear-gradient(to bottom, #ffd 0%, #dba 100%);
+  box-shadow: 0 0 96px #edb, 0 0 66px #ffd, inset 0 0 66px #fec;
+  opacity: 0.9;
 }
-
-.wave {
-  position: absolute;
-  width: 200%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.5);
-  opacity: 0.5;
-  top: 0;
-  border-radius: 100%;
-}
-
-.wave1 {
-  animation: wave 6s infinite linear;
-}
-
-.wave2 {
-  animation: wave 8s infinite linear;
-  top: -20px;
-}
-
-@keyframes wave {
-  0% {
-    transform: translateX(-50%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-.island {
-  position: absolute;
-  bottom: 5%;
-  left: 50%;
-  width: 200px;
-  height: 100px;
-  background: radial-gradient(circle, #f4a460, #EBE7D9);
+#land {
+  margin: 0 auto;
+  width: 300px; height: 100px;
   border-radius: 50%;
-  transform: translateX(-50%);
-  z-index: 3;
-}
-
-.palm-tree {
+  background: #eb4;
+  background-image: linear-gradient(to bottom, rgb(253, 207, 98) 0%, rgb(250, 190, 111) 100%);
   position: absolute;
-  bottom: 30px;
-  left: 50%;
-  width: 20px;
-  height: 100px;
-  background: #8B4513;
-  transform: translateX(-50%);
-  z-index: 4;
+  bottom: 0; left: 50%; margin-left: -150px;
 }
-
-.trunk {
-  position: absolute;
-  width: 20px;
-  height: 100px;
-  background: #8B4513;
-}
-
-.leaf {
-  position: absolute;
-  width: 80px;
-  height: 20px;
-  background: #228B22;
-  border-radius: 50%;
-  transform-origin: left;
-}
-
-.leaf1 {
-  top: -20px;
-  transform: rotate(-180deg);
-}
-
-.leaf2 {
-  top: -20px;
-  transform: rotate(-150deg);
-}
-
-.leaf3 {
-  top: -20px;
-  transform: rotate(15deg);
-}
-
-.leaf4 {
-  top: -20px;
-  transform: rotate(40deg);
-}
-
-.leaf5 {
-  top: -20px;
-  transform: rotate(75deg);
-}
-
-/* Buttons and Text */
-.container {
+#palm {
+  width: 8px; height: 100px;
+  background: #b74;
+  background-image: linear-gradient(to left, #962 0%, #c96 50%, #962 100%);
   position: relative;
+  left: 150px; bottom: 96px;
+  transform: rotate(5deg);
+  border-radius: 35%;
+}
+#palm > div {
+  position: absolute;  
+  font-size: 50px;
+  color: green;  
+  font-weight: bolder;
+}
+#palm > div:nth-child(1) {
+  bottom: 65px; right: 10px;
+  transform: rotate(45deg);
+}
+#palm > div:nth-child(2) {
+  bottom: 72px; right: 10px;
+  font-size: 65px;
+  transform: rotate(100deg);
+}
+#palm > div:nth-child(3) {
+  bottom: 88px; left: -5px;
+  transform: rotate(165deg);
+}
+#palm > div:nth-child(4) {
+  bottom: 76px; left: 8px;
+  font-size: 60px;
+  transform: rotate(250deg);
+}
+#palm > div:nth-child(5) {
+  bottom: 70px; left: 6px;
+  transform: rotate(300deg);
+}
+#sea {
+  background: #3ac;
+  background-image: linear-gradient(to bottom, #3ac 0%, #05a 94%, #fff 100%);
+  width: 100%; height: 100%;
+  border-top: 4px dotted #5be;
+  transform: scaleX(2);
+  -webkit-filter: blur(1px);
+  filter: blur(1px);
+}
+#tide {
+  position: absolute; bottom: 0;
+  animation: waves 1s infinite linear;
+  width: 100%; height: 60px; 
+}
+@keyframes waves {
+  0%   {left: 0}
+  100% {left: 16px}
+}
+
+/* Text and Buttons */
+.container {
+  position: absolute;
   z-index: 10;
-  bottom: 250px;
+  top: 20%; /* Centre verticalement */
+  left: 50%; /* Centre horizontalement */
+  transform: translate(-50%, -50%); /* Ajustement précis au centre */
+  text-align: center;
 }
 
 .btn {
   margin-top: 20px;
   padding: 10px 20px;
-  background: #FFD700;
-  color: #333;
+  background: goldenrod;
+  color: rgb(1, 14, 73);
   border: none;
   border-radius: 5px;
   text-decoration: none;
@@ -172,4 +110,17 @@ body {
   font-size: 24px;
   cursor: pointer;
   color: #FFD700;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: goldenrod;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+p {
+  font-size: 18px;
+  color: goldenrod;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
