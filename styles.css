@@ -1,0 +1,175 @@
+/* Base styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.scene {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.sky {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70%;
+  background: linear-gradient(to bottom,#ee7c78, #FF7E5F );
+  z-index: 1;
+}
+
+.sun {
+  position: absolute;
+  bottom: 35%;
+  left: 60%;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, #FFD700, #FF8C00);
+  border-radius: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.sea {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background: #4FC3F7;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.wave {
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0.5;
+  top: 0;
+  border-radius: 100%;
+}
+
+.wave1 {
+  animation: wave 6s infinite linear;
+}
+
+.wave2 {
+  animation: wave 8s infinite linear;
+  top: -20px;
+}
+
+@keyframes wave {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.island {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  width: 200px;
+  height: 100px;
+  background: radial-gradient(circle, #f4a460, #EBE7D9);
+  border-radius: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.palm-tree {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  width: 20px;
+  height: 100px;
+  background: #8B4513;
+  transform: translateX(-50%);
+  z-index: 4;
+}
+
+.trunk {
+  position: absolute;
+  width: 20px;
+  height: 100px;
+  background: #8B4513;
+}
+
+.leaf {
+  position: absolute;
+  width: 80px;
+  height: 20px;
+  background: #228B22;
+  border-radius: 50%;
+  transform-origin: left;
+}
+
+.leaf1 {
+  top: -20px;
+  transform: rotate(-180deg);
+}
+
+.leaf2 {
+  top: -20px;
+  transform: rotate(-150deg);
+}
+
+.leaf3 {
+  top: -20px;
+  transform: rotate(15deg);
+}
+
+.leaf4 {
+  top: -20px;
+  transform: rotate(40deg);
+}
+
+.leaf5 {
+  top: -20px;
+  transform: rotate(75deg);
+}
+
+/* Buttons and Text */
+.container {
+  position: relative;
+  z-index: 10;
+  bottom: 250px;
+}
+
+.btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #FFD700;
+  color: #333;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.sound-btn {
+  margin-top: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #FFD700;
+}
