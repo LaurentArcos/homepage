@@ -3,7 +3,7 @@ body {
   margin: 0; 
   max-height: 100vh; 
   overflow: hidden;
-  background: #ccf;
+  background: rgb(255, 255, 255);
   background-image: linear-gradient(200deg, rgb(0, 14, 56) 30%, rgb(255, 169, 57) 100%);
 }
 #sun {
@@ -60,8 +60,8 @@ body {
   height: 100%;
   background: linear-gradient(
     to right, 
-    rgba(0, 0, 0, 0) 0%, 
-    rgba(0, 0, 0, 0.4) 100%
+    rgba(0, 0, 0, 0) 30%, 
+    rgb(0, 0, 0) 95%
   );
   z-index: 2;
   pointer-events: none; 
@@ -99,48 +99,76 @@ body {
   width: 300px; height: 100px;
   border-radius: 50%;
   background: #eb4;
-  background-image: linear-gradient(to bottom, rgb(253, 207, 98) 0%, rgb(250, 190, 111) 100%);
+  background-image: linear-gradient(to right, rgb(253, 207, 98) 00%, rgb(134, 83, 17) 100%);
   position: absolute;
   bottom: 0; left: 50%; margin-left: -150px;
 }
-#palm {
-  width: 8px; height: 100px;
+/* Styles pour chaque palmier */
+.palm {
+  width: 8px;
+  height: 100px;
   background: #b74;
-  background-image: linear-gradient(to left, #962 0%, #c96 50%, #962 100%);
-  position: relative;
-  left: 150px; bottom: 96px;
-  transform: rotate(5deg);
+  background-image: linear-gradient(to right, rgb(201, 134, 47) 0%, rgb(151, 102, 53) 40%, rgb(97, 65, 22) 100%);
+  position: absolute;
+  bottom: 96px;
   border-radius: 35%;
 }
-#palm > div {
-  position: absolute;  
+
+.palm > div {
+  position: absolute;
   font-size: 50px;
-  color: #005f00;  
+  color: #005f00;
   font-weight: bolder;
 }
-#palm > div:nth-child(1) {
-  bottom: 65px; right: 10px;
+
+/* Feuilles du palmier */
+.palm > div:nth-child(1) {
+  bottom: 65px;
+  right: 10px;
   transform: rotate(45deg);
 }
-#palm > div:nth-child(2) {
-  bottom: 72px; right: 10px;
+.palm > div:nth-child(2) {
+  bottom: 72px;
+  right: 10px;
   font-size: 65px;
   transform: rotate(100deg);
 }
-#palm > div:nth-child(3) {
-  bottom: 88px; left: -5px;
+.palm > div:nth-child(3) {
+  bottom: 88px;
+  left: -5px;
   transform: rotate(165deg);
 }
-#palm > div:nth-child(4) {
-  bottom: 76px; left: 8px;
+.palm > div:nth-child(4) {
+  bottom: 76px;
+  left: 8px;
   font-size: 60px;
   transform: rotate(250deg);
 }
-#palm > div:nth-child(5) {
-  bottom: 70px; left: 6px;
+.palm > div:nth-child(5) {
+  bottom: 70px;
+  left: 6px;
   transform: rotate(300deg);
 }
 
+/* Palmier 1 */
+#palm1 {
+  left: 120px;
+  transform: rotate(5deg);
+}
+
+/* Palmier 2 */
+#palm2 {
+  left: 150px;
+  transform: rotate(-5deg);
+  height: 100px; /* Un peu plus grand */
+}
+
+/* Palmier 3 */
+#palm3 {
+  left: 180px;
+  transform: rotate(10deg);
+  height: 110px; /* Taille intermédiaire */
+}
 #tide {
   position: absolute; bottom: 0;
   animation: waves 1s infinite linear;
