@@ -193,7 +193,7 @@ body {
   margin-top: 20px;
   padding: 10px 20px;
   background: goldenrod;
-  color: rgb(1, 14, 73);
+  color: white;
   border: none;
   border-radius: 5px;
   text-decoration: none;
@@ -211,14 +211,14 @@ body {
 }
 
 h1 {
-  font-size: 36px;
+  font-size: 24px;
   margin-bottom: 10px;
-  color: goldenrod;
+  color: white;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 p {
   font-size: 18px;
-  color: goldenrod;
+  color: white;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
