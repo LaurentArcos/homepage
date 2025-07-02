@@ -1,17 +1,20 @@
 const sound = new Howl({
   src: ['music.mp3'],
-  autoplay: true,
+  autoplay: false, 
   loop: true,
   volume: 0.5
 });
 
 const soundToggle = document.getElementById('soundToggle');
-let isPlaying = true;
+let isPlaying = false; // par défaut off
+
+
+soundToggle.textContent = '🔇';
 
 soundToggle.addEventListener('click', () => {
   if (isPlaying) {
     sound.pause();
-    soundToggle.textContent = '🔈';
+    soundToggle.textContent = '🔇';
   } else {
     sound.play();
     soundToggle.textContent = '🔊';
