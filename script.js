@@ -9,8 +9,6 @@ const soundToggle = document.getElementById('soundToggle');
 let isPlaying = false; // par défaut off
 
 
-soundToggle.textContent = '🔇';
-
 soundToggle.addEventListener('click', () => {
   if (isPlaying) {
     sound.pause();
